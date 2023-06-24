@@ -1,0 +1,53 @@
+  var x = 1;
+  
+
+
+  for(let x = 0; x<10; x++){
+    console.log(x);
+  }
+
+  console.log("my topx ", x);
+
+ const furits = ["apple", "orange", "banana"];
+
+  const vegs = ["carrot", "beetroot"];
+
+    // furits.forEach(function(furit){
+  //   console.log(furit);
+  // })
+
+  const fi = furits.map(function(furit){
+     return furit;
+  })
+
+    const furits = ["apple", "orange", "banana"];
+
+  const person = {
+    name:"jagan",
+    age:27,
+    email:"jaganjavid@gmail.com"
+  }
+
+  const {name,age,email} = person;
+
+  console.log(age);
+
+ 
+   id === 101 ? console.log("Correct") : console.log("Incorrect");  
+
+
+  const result = [...furits, ...vegs];
+
+  console.log(result);
+
+   // function greet(name){
+  //   console.log(name + " " + "hello");
+  // }
+
+  // greet("Javid");
+
+  const greet = (name) => {
+    console.log(name + " " + "hello");
+  }
+
+  greet("Javid");
