@@ -4,7 +4,8 @@ import { useState } from "react";
 import Header from "./component/Header";
 import FeedbackList from "./component/FeedbackList";
 import FeedbackForm from "./component/FeedbackForm";
-import Button from "./component/shared/Button";
+import { FeedbackProvider } from "./context/FeedBackContext";
+
 
 function App() {
 
@@ -28,24 +29,14 @@ const [feedback, setFeedback] = useState([
     
 ]);
 
-const handleDelete = (id) => {
-  if(window.confirm("Are you Sure?")){
-    setFeedback(feedback.filter((item) => {
-      return item.id !== id;
-    }))
-  }
-}
-
-
-
   return (
-    <div className="App">
+    <FeedbackProvider>
        <Header/>
        <div className="container">
            <FeedbackForm/>
-           <FeedbackList feedback={feedback} handleDelete={handleDelete}/>
+           <FeedbackList/>
        </div>
-    </div>
+    </FeedbackProvider>
   );
 }
 

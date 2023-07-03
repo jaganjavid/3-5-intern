@@ -1,11 +1,15 @@
 import { FaTimes } from "react-icons/fa";
 
-import Card from "./shared/Card"
+import Card from "./shared/Card";
+
+import { useContext } from "react";
+
+import FeedbackContent from "../context/FeedBackContext";
 
 
-const FeedbackItems = ({item,handleDelete}) => {
+const FeedbackItems = ({item}) => {
 
- 
+  const {handleDelete} = useContext(FeedbackContent);
 
   return (
     <Card reverse={false}>

@@ -1,7 +1,11 @@
-import FeedbackItems from "./FeedbackItems"
+import FeedbackItems from "./FeedbackItems";
+import FeedbackContent from "../context/FeedBackContext";
+import { useContext } from "react";
 
-const FeedbackList = ({feedback, handleDelete}) => {
+const FeedbackList = () => {
 
+  const {feedback} = useContext(FeedbackContent);
+ 
   if(!feedback || feedback.length === 0){
     return <p>No item added yet</p>
   }  
@@ -12,7 +16,7 @@ const FeedbackList = ({feedback, handleDelete}) => {
         {
             feedback.map((item) => (
                <div key={item.id}>
-                   <FeedbackItems item={item} handleDelete={handleDelete}/>
+                   <FeedbackItems item={item}/>
                 </div>
             ))
         }
