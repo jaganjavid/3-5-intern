@@ -1,4 +1,4 @@
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaEdit } from "react-icons/fa";
 
 import Card from "./shared/Card";
 
@@ -9,7 +9,7 @@ import FeedbackContent from "../context/FeedBackContext";
 
 const FeedbackItems = ({item}) => {
 
-  const {handleDelete} = useContext(FeedbackContent);
+  const {handleDelete, editFeedback} = useContext(FeedbackContent);
 
   return (
     <Card reverse={false}>
@@ -22,6 +22,9 @@ const FeedbackItems = ({item}) => {
         <div className='text-display'>
             {item.text}
         </div>
+        <button className="edit" onClick={() => editFeedback(item)}>
+          <FaEdit/>
+        </button>
     </Card>
   )
   
